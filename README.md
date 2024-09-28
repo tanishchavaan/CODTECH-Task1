@@ -5,7 +5,7 @@ Domain : SQL
 Duration : 05.09.2024 to 05.10.2024
 Mentor : SHRAVANI GOUNI
 
-OVERVIEW OF THE PROJECT 
+OVERVIEW OF THE PROJECT :
 The goal of this project is to design and implement a database to efficiently manage student records, including personal details, course enrollments, and grades. The project focuses on practicing relational database concepts, understanding how to organize data into tables, and writing SQL queries to retrieve, manipulate, and combine data across multiple tables.
 
 By the end of the project, you will have:
