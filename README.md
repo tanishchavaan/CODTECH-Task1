@@ -44,5 +44,29 @@ Set up VS Code with the SQL Tools extension or use a local database management t
 Create Database and Tables:
 
 Define the tables for Students, Courses, and Enrollments using SQL CREATE TABLE commands. The schema should include relationships such as primary and foreign keys to maintain referential integrity.
+
+Insert Sample Data:
+
+Insert sample data into the Students, Courses, and Enrollments tables using INSERT queries.
+
+Write SQL Queries for Data Management:
+
+Use SQL SELECT, INSERT, UPDATE, and DELETE queries to manage and manipulate data. For example, retrieving all student records:
+
+Implement JOIN Operations:
+
+Use JOIN to combine data from multiple tables. For example, to retrieve a list of students and their enrolled courses with grades:
+
+Execute Queries and View Results:
+
+Run the SQL queries and view the results in the DBMS or IDE. Ensure the outputs are correct and the relationships between students, courses, and enrollments are properly maintained.
+Perform Data Modifications:
+
+Update records, such as changing a student's grade using an UPDATE query:
+
+Test and Optimize:
+
+Test the database for various scenarios like enrolling students in new courses, updating grades, and retrieving filtered data (e.g., all students in a specific course). Optimize queries for performance if needed.
+
 Conclusion:
 This project provides practical experience in designing and managing relational databases. By following the outlined steps, you’ll be able to build a functional system for managing student records, practice SQL queries, and understand how to implement joins to combine data from multiple tables.
