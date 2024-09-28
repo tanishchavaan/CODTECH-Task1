@@ -14,6 +14,9 @@ Created a well-structured relational database.
 Defined and managed student, course, and enrollment data.
 Written SQL queries to perform various data operations.
 Utilized JOIN operations to combine data from multiple tables.
+
+![image](https://github.com/user-attachments/assets/683e13b1-e349-4dd2-9ff8-a3351d2c9e42)
+
 Key Activities:
 Design Database Schema: Define tables for Students, Courses, and Enrollments, each with appropriate relationships (primary keys, foreign keys) and constraints.
 
@@ -25,6 +28,9 @@ Retrieve information using SQL SELECT queries.
 Apply Joins: Use JOIN operations to combine data from multiple tables, such as viewing students' details along with their enrolled courses and grades.
 
 Data Management and Manipulation: Use SQL to update student records, modify grades, and retrieve records based on specific criteria (e.g., students enrolled in a particular course).
+
+
+![image](https://github.com/user-attachments/assets/0ba77b01-57a2-4384-9cfb-f0073a5878c6)
 
 Technologies Used:
 SQL (Structured Query Language): For creating and managing the database, executing queries, and performing JOIN operations.
