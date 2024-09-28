@@ -1,0 +1,113 @@
+-- 1. Create Students Table
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    birth_date DATE,
+    email VARCHAR(100),
+    phone VARCHAR(15)
+);
+
+-- 2. Create Courses Table
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_name VARCHAR(100),
+    course_description TEXT
+);
+
+-- 3. Create Enrollments Table
+CREATE TABLE Enrollments (
+    enrollment_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    course_id INT,
+    grade CHAR(2),
+    enrollment_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
+
+-- 4. Insert Sample Data into Students Table
+INSERT INTO Students (first_name, last_name, birth_date, email, phone)
+VALUES
+('John', 'Doe', '2000-05-15', 'john.doe@example.com', '123-456-7890'),
+('Jane', 'Smith', '1999-08-22', 'jane.smith@example.com', '987-654-3210'),
+('Alice', 'Johnson', '2001-01-10', 'alice.johnson@example.com', '456-789-1230');
+
+-- 5. Insert Sample Data into Courses Table
+INSERT INTO Courses (course_name, course_description)
+VALUES
+('Math 101', 'Basic Mathematics Course'),
+('Physics 101', 'Introduction to Physics'),
+('Computer Science 101', 'Fundamentals of Computer Science');
+
+-- 6. Insert Sample Data into Enrollments Table
+INSERT INTO Enrollments (student_id, course_id, grade, enrollment_date)
+VALUES
+(1, 1, 'A', '2023-09-01'),
+(1, 2, 'B', '2023-09-02'),
+(2, 1, 'B', '2023-09-03'),
+(2, 3, 'A', '2023-09-04'),
+(3, 2, 'C', '2023-09-05');
+
+-- 7. Retrieve All Students with Their Enrollments and Grades
+SELECT 
+    Students.first_name, 
+    Students.last_name, 
+    Courses.course_name, 
+    Enrollments.grade
+FROM 
+    Enrollments
+JOIN 
+    Students ON Enrollments.student_id = Students.student_id
+JOIN 
+    Courses ON Enrollments.course_id = Courses.course_id;
+
+-- 8. Retrieve All Courses and the Students Enrolled in Each Course
+SELECT 
+    Courses.course_name, 
+    Students.first_name, 
+    Students.last_name, 
+    Enrollments.grade
+FROM 
+    Courses
+JOIN 
+    Enrollments ON Courses.course_id = Enrollments.course_id
+JOIN 
+    Students ON Enrollments.student_id = Students.student_id;
+
+-- 9. Retrieve Students Who Scored 'A' in Any Course
+SELECT 
+    Students.first_name, 
+    Students.last_name, 
+    Courses.course_name, 
+    Enrollments.grade
+FROM 
+    Enrollments
+JOIN 
+    Students ON Enrollments.student_id = Students.student_id
+JOIN 
+    Courses ON Enrollments.course_id = Courses.course_id
+WHERE 
+    Enrollments.grade = 'A';
+
+-- 10. Update a Student's Grade in a Course
+UPDATE Enrollments
+SET grade = 'A'
+WHERE student_id = 2 AND course_id = 1;
+
+-- 11. Delete a Student Record (Cascading will also delete related enrollments)
+DELETE FROM Students
+WHERE student_id = 3;
+
+-- 12. Retrieve Updated List of Enrollments After Deletion
+SELECT 
+    Students.first_name, 
+    Students.last_name, 
+    Courses.course_name, 
+    Enrollments.grade
+FROM 
+    Enrollments
+JOIN 
+    Students ON Enrollments.student_id = Students.student_id
+JOIN 
+    Courses ON Enrollments.course_id = Courses.course_id;
